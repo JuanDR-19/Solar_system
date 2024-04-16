@@ -82,6 +82,20 @@ void main(){
 
 class VertexShaderCameraDemo(BaseScene):
 
+    @staticmethod
+    def apply_transformation(planet, transformation_planet, scale_factor):
+        planet.rotation_angle += planet.rotation_speed
+        planet.rotation_angle %= 360
+        planet.translation_angle += planet.translation_speed
+        planet.translation_angle %= 360
+        transformation_planet = translate(transformation_planet,
+                                          planet.cal_x(planet.orbr, planet.translation_angle),
+                                          0,
+                                          planet.cal_z(planet.orbr, planet.translation_angle))
+        transformation_planet = rotate(transformation_planet, planet.rotation_angle, "y")
+        transformation_planet = scale(transformation_planet, scale_factor, scale_factor, scale_factor)
+        planet.draw(transformation_planet)
+
     def __init__(self):
         super().__init__(1000, 800)
         self.vao_ref = None
@@ -145,7 +159,7 @@ class VertexShaderCameraDemo(BaseScene):
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/mapamundi301210.jpg",
             0,
-            0.1,
+            0.3,
             0,
             0.01,
             2
@@ -528,82 +542,36 @@ class VertexShaderCameraDemo(BaseScene):
         camera_transformation = self.camera.transformation
 
         # Tierra y lunas__________________________________________________________
-
-        self.earth.rotation_angle += self.earth.rotation_speed
-        self.earth.rotation_angle %= 360
-        self.earth.translation_angle += self.earth.translation_speed
-        self.earth.translation_angle %= 360
         transformation = identity_mat()
-        transformation = translate(transformation,
-                                   self.earth.cal_x(self.earth.orbr, self.earth.translation_angle),
-                                   0,
-                                   self.earth.cal_z(self.earth.orbr, self.earth.translation_angle))
-        transformation = rotate(transformation, self.earth.rotation_angle, "y")
-        transformation = scale(transformation, 0.0046, 0.0046, 0.0046)
-        self.earth.draw(transformation)
+        self.apply_transformation(self.earth, transformation, 0.0046)
 
-        self.e_moon.rotation_angle += self.e_moon.rotation_speed
-        self.e_moon.rotation_angle %= 360
         e_moon_transformation = identity_mat()
         #z es [2,2] en la matriz de transformacion
-        e_moon_transformation = rotate(e_moon_transformation, 0.2, "y", False)
         e_moon_transformation = translate(e_moon_transformation, self.earth.cal_x(self.earth.orbr, self.earth.translation_angle),
                                           transformation[1][1],
                                           self.earth.cal_z(self.earth.orbr, self.earth.translation_angle))
         e_moon_transformation = rotate(e_moon_transformation, self.e_moon.rotation_angle, "y")
+        e_moon_transformation = rotate(e_moon_transformation, 0.2, "y", False)
         e_moon_transformation = scale(e_moon_transformation, 0.0012, 0.0012, 0.0012)
         self.e_moon.draw(e_moon_transformation)
-
         # Tierra y lunas__________________________________________________________
 
         # sol__________________________________________________________
-
         transformation_sun = identity_mat()
         transformation_sun = translate(transformation_sun, 0, 0, 0)
         transformation_sun = scale(transformation_sun, 0.5, 0.5, 0.5)
         self.sun.draw(transformation_sun)
-
         # sol _________________________________________________________
 
-        self.mercury.rotation_angle += self.mercury.rotation_speed
-        self.mercury.rotation_angle %= 360
-        self.mercury.translation_angle += self.mercury.translation_speed
-        self.mercury.translation_angle %= 360
         transformation_mercury = identity_mat()
-        transformation_mercury = translate(transformation_mercury,
-                                           self.mercury.cal_x(self.mercury.orbr, self.mercury.translation_angle),
-                                           0,
-                                           self.mercury.cal_z(self.mercury.orbr, self.mercury.translation_angle))
-        transformation_mercury = rotate(transformation_mercury, self.mercury.rotation_angle, "y")
-        transformation_mercury = scale(transformation_mercury, 0.0017, 0.0017, 0.0017)
-        self.mercury.draw(transformation_mercury)
+        self.apply_transformation(self.mercury, transformation_mercury, 0.0017)
 
-        self.venus.rotation_angle += self.venus.rotation_speed
-        self.venus.rotation_angle %= 360
-        self.venus.translation_angle += self.venus.translation_speed
-        self.venus.translation_angle %= 360
         transformation_venus = identity_mat()
-        transformation_venus = translate(transformation_venus,
-                                         self.venus.cal_x(self.venus.orbr, self.venus.translation_angle),
-                                         0,
-                                         self.venus.cal_z(self.venus.orbr, self.venus.translation_angle))
-        transformation_venus = rotate(transformation_venus, self.venus.rotation_angle, "y")
-        transformation_venus = scale(transformation_venus, 0.0043, 0.0043, 0.0043)
-        self.venus.draw(transformation_venus)
+        self.apply_transformation(self.venus, transformation_venus, 0.0043)
 
         # marte y lunas__________________________________________________________
-        self.mars.rotation_angle += self.mars.rotation_speed
-        self.mars.rotation_angle %= 360
-        self.mars.translation_angle += self.mars.translation_speed
-        self.mars.translation_angle %= 360
         transformation_mars = identity_mat()
-        transformation_mars = translate(transformation_mars,
-                                        self.mars.cal_x(self.mars.orbr, self.mars.translation_angle),
-                                        0,
-                                        self.mars.cal_z(self.mars.orbr, self.mars.translation_angle))
-        transformation_mars = rotate(transformation_mars, self.mars.rotation_angle, "y")
-        transformation_mars = scale(transformation_mars, 0.0024, 0.0024, 0.0024)
-        self.mars.draw(transformation_mars)
+        self.apply_transformation(self.mars, transformation_mars, 0.0024)
 
         self.fobos.rotation_angle += self.fobos.rotation_speed
         self.fobos.rotation_angle %= 360
@@ -633,22 +601,11 @@ class VertexShaderCameraDemo(BaseScene):
         transformation_deimos = scale(transformation_deimos, 0.00036, 0.00036, 0.00036)
         self.deimos.draw(transformation_deimos)
         # el tamaño de las lunas de marte es mucho menor, pero no se verian
-
         # marte y lunas__________________________________________________________
 
         # jupiter y lunas__________________________________________________________
-        self.jupiter.rotation_angle += self.jupiter.rotation_speed
-        self.jupiter.rotation_angle %= 360
-        self.jupiter.translation_angle += self.jupiter.translation_speed
-        self.jupiter.translation_angle %= 360
         transformation_jupiter = identity_mat()
-        transformation_jupiter = translate(transformation_jupiter,
-                                           self.jupiter.cal_x(self.jupiter.orbr, self.jupiter.translation_angle),
-                                           0,
-                                           self.jupiter.cal_z(self.jupiter.orbr, self.jupiter.translation_angle))
-        transformation_jupiter = rotate(transformation_jupiter, self.jupiter.rotation_angle, "y")
-        transformation_jupiter = scale(transformation_jupiter, 0.05, 0.05, 0.05)
-        self.jupiter.draw(transformation_jupiter)
+        self.apply_transformation(self.jupiter, transformation_jupiter, 0.05)
 
         self.io.rotation_angle += self.io.rotation_speed
         self.io.rotation_angle %= 360
@@ -733,22 +690,11 @@ class VertexShaderCameraDemo(BaseScene):
         transformation_j_moon_3 = rotate(transformation_j_moon_3, self.j_moon_3.rotation_angle, "y")
         transformation_j_moon_3 = scale(transformation_j_moon_3, 0.0013, 0.0013, 0.0013)
         self.j_moon_3.draw(transformation_j_moon_3)
-
         # jupiter y lunas__________________________________________________________
 
         # saturno y lunas__________________________________________________________
-        self.saturn.rotation_angle += self.saturn.rotation_speed
-        self.saturn.rotation_angle %= 360
-        self.saturn.translation_angle += self.saturn.translation_speed
-        self.saturn.translation_angle %= 360
         transformation_saturn = identity_mat()
-        transformation_saturn = translate(transformation_saturn,
-                                          self.saturn.cal_x(self.saturn.orbr, self.saturn.translation_angle),
-                                          0,
-                                          self.saturn.cal_z(self.saturn.orbr, self.saturn.translation_angle))
-        transformation_saturn = rotate(transformation_saturn, self.saturn.rotation_angle, "y")
-        transformation_saturn = scale(transformation_saturn, 0.043, 0.043, 0.043)
-        self.saturn.draw(transformation_saturn)
+        self.apply_transformation(self.saturn, transformation_saturn, 0.043)
 
         self.mimas.rotation_angle += self.mimas.rotation_speed
         self.mimas.rotation_angle %= 360
@@ -834,22 +780,12 @@ class VertexShaderCameraDemo(BaseScene):
         transformation_s_moon_2 = scale(transformation_s_moon_2, 0.0015, 0.0015, 0.0015)
         self.s_moon_2.draw(transformation_s_moon_2)
         #Gran parte de las lunas tienen un tamaño menor, pero como en marte, no se verian
-
         # saturno y lunas__________________________________________________________
 
         # urano y lunas__________________________________________________________
-        self.uranus.rotation_angle += self.uranus.rotation_speed
-        self.uranus.rotation_angle %= 360
-        self.uranus.translation_angle += self.uranus.translation_speed
-        self.uranus.translation_angle %= 360
         transformation_uranus = identity_mat()
-        transformation_uranus = translate(transformation_uranus,
-                                          self.uranus.cal_x(self.uranus.orbr, self.uranus.translation_angle),
-                                          0,
-                                          self.uranus.cal_z(self.uranus.orbr, self.uranus.translation_angle))
-        transformation_uranus = rotate(transformation_uranus, self.uranus.rotation_angle, "y")
-        transformation_uranus = scale(transformation_uranus, 0.017, 0.017, 0.017)
-        self.uranus.draw(transformation_uranus)
+        self.apply_transformation(self.uranus, transformation_uranus, 0.017)
+
 
         self.u_moon_1.rotation_angle += self.u_moon_1.rotation_speed
         self.u_moon_1.rotation_angle %= 360
@@ -934,22 +870,11 @@ class VertexShaderCameraDemo(BaseScene):
         transformation_u_moon_6 = rotate(transformation_u_moon_6, self.u_moon_6.rotation_angle, "y")
         transformation_u_moon_6 = scale(transformation_u_moon_6, 0.002, 0.002, 0.002)
         self.u_moon_6.draw(transformation_u_moon_6)
-
         # urano y lunas__________________________________________________________
 
         # neptuno y lunas__________________________________________________________
-        self.neptune.rotation_angle += self.neptune.rotation_speed
-        self.neptune.rotation_angle %= 360
-        self.neptune.translation_angle += self.neptune.translation_speed
-        self.neptune.translation_angle %= 360
         transformation_neptune = identity_mat()
-        transformation_neptune = translate(transformation_neptune,
-                                           self.neptune.cal_x(self.neptune.orbr, self.neptune.translation_angle),
-                                           0,
-                                           self.neptune.cal_z(self.neptune.orbr, self.neptune.translation_angle))
-        transformation_neptune = rotate(transformation_neptune, self.neptune.rotation_angle, "y")
-        transformation_neptune = scale(transformation_neptune, 0.017, 0.017, 0.017)
-        self.neptune.draw(transformation_neptune)
+        self.apply_transformation(self.neptune, transformation_neptune, 0.017)
 
         self.n_moon_1.rotation_angle += self.n_moon_1.rotation_speed
         self.n_moon_1.rotation_angle %= 360
@@ -1034,35 +959,20 @@ class VertexShaderCameraDemo(BaseScene):
         transformation_n_moon_6 = rotate(transformation_n_moon_6, self.n_moon_6.rotation_angle, "y")
         transformation_n_moon_6 = scale(transformation_n_moon_6, 0.001, 0.001, 0.001)
         self.n_moon_6.draw(transformation_n_moon_6)
-
         # neptuno y lunas__________________________________________________________
 
         # pluto y lunas__________________________________________________________
-        self.pluto.rotation_angle += self.pluto.rotation_speed
-        self.pluto.rotation_angle %= 360
-        self.pluto.translation_angle += self.pluto.translation_speed
-        self.pluto.translation_angle %= 360
         transformation_pluto = identity_mat()
-        transformation_pluto = translate(transformation_pluto,
-                                         self.pluto.cal_x(self.pluto.orbr, self.pluto.translation_angle),
-                                         0,
-                                         self.pluto.cal_z(self.pluto.orbr, self.pluto.translation_angle))
-        transformation_pluto = rotate(transformation_pluto, self.pluto.rotation_angle, "y")
-        transformation_pluto = scale(transformation_pluto, 0.0008, 0.0008, 0.0008)
-        self.pluto.draw(transformation_pluto)
+        self.apply_transformation(self.pluto, transformation_pluto, 0.0008)
         # pluto y lunas__________________________________________________________
 
         # nave__________________________________________________________
-
         transformation_ship = self.camera.transformation
         transformation_ship = translate(
             transformation_ship, 0.001, -0.03, -0.09
         )
         transformation_ship = rotate(transformation_ship, 180, "y", local=True)
         transformation_ship = scale(transformation_ship, 0.01, 0.01, 0.01)
-        # print(f'{transformation_ship[0, 3]} {transformation_ship[1, 3]} {transformation_ship[2, 3]}')
-        # print(
-            # f'{self.camera.transformation[0, 3]} {self.camera.transformation[1, 3]} {self.camera.transformation[2, 3]}')
         self.ship.draw(transformation_ship)
 
 
