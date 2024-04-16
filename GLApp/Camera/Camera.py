@@ -29,7 +29,7 @@ class Camera:
         self.transformation = identity_mat()
         self.last_mouse = pygame.math.Vector2(0, 0)
         self.mouse_sensitivity = [0.1, 0.1]
-        self.key_sensitivity = 0.0009
+        self.key_sensitivity = 0.004
         self.projection_matrix = perspective_mat(60, width / height, 0.01, 10000)
         self.projection = Uniform("mat4", self.projection_matrix)
         self.projection.find_variable(program_id, "projectionMatrix")
