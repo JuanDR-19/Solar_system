@@ -229,8 +229,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.5,
+            0.00337
         )
         self.deimos = Planet(
             self.program_id,
@@ -239,8 +239,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.7,
+            0.0085
         )
         self.jupiter = Planet(
             self.program_id,
@@ -259,8 +259,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.5,
+            0.15
         )
         self.europa = Planet(
             self.program_id,
@@ -269,8 +269,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.7,
+            0.24
         )
         self.calisto = Planet(
             self.program_id,
@@ -279,8 +279,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.9,
+            0.67
         )
         self.j_moon_1 = Planet(
             self.program_id,
@@ -289,8 +289,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            1.1,
+            0.3
         )
         self.j_moon_2 = Planet(
             self.program_id,
@@ -299,8 +299,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.3,
+            0.4
         )
         self.j_moon_3 = Planet(
             self.program_id,
@@ -309,8 +309,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.1,
+            0.35
         )
         self.saturn = Planet(
             self.program_id,
@@ -329,8 +329,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.5,
+            0.0667
         )
         self.encelado = Planet(
             self.program_id,
@@ -339,8 +339,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.7,
+            0.0856
         )
         self.tetis = Planet(
             self.program_id,
@@ -349,8 +349,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.9,
+            0.106
         )
         self.titan = Planet(
             self.program_id,
@@ -359,8 +359,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            1.1,
+            0.434
         )
         self.s_moon_1 = Planet(
             self.program_id,
@@ -369,8 +369,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.3,
+            0.52
         )
         self.s_moon_2 = Planet(
             self.program_id,
@@ -379,8 +379,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.1,
+            0.135
         )
         self.uranus = Planet(
             self.program_id,
@@ -399,8 +399,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.5,
+            0.0179
         )
         self.u_moon_2 = Planet(
             self.program_id,
@@ -409,8 +409,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.8,
+            0.01935
         )
         self.u_moon_3 = Planet(
             self.program_id,
@@ -419,8 +419,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.2,
+            0.02128
         )
         self.u_moon_4 = Planet(
             self.program_id,
@@ -429,8 +429,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.6,
+            0.02222
         )
         self.u_moon_5 = Planet(
             self.program_id,
@@ -439,8 +439,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.7,
+            0.022545
         )
         self.u_moon_6 = Planet(
             self.program_id,
@@ -449,8 +449,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.9,
+            0.02690
         )
         self.neptune = Planet(
             self.program_id,
@@ -469,8 +469,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.5,
+            0.0173
         )
         self.n_moon_2 = Planet(
             self.program_id,
@@ -479,8 +479,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.7,
+            0.01801
         )
         self.n_moon_3 = Planet(
             self.program_id,
@@ -489,8 +489,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.6,
+            0.18907
         )
         self.n_moon_4 = Planet(
             self.program_id,
@@ -499,8 +499,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.9,
+            0.02645
         )
         self.n_moon_5 = Planet(
             self.program_id,
@@ -509,8 +509,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            0.8,
+            0.04231
         )
         self.n_moon_6 = Planet(
             self.program_id,
@@ -519,8 +519,8 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.01,
-            2
+            1,
+            0.12744
         )
         self.pluto = Planet(
             self.program_id,
@@ -587,104 +587,143 @@ class VertexShaderCameraDemo(BaseScene):
         self.apply_transformation(self.mars, transformation_mars, 0.0024)
 
         transformation_fobos = identity_mat()
-        #self.apply_moon_transformation(self.fobos, self.mars, transformation_fobos, 0.00046, 0, 0, 0)
+        transformation_fobos = self.apply_moon_transformation(self.fobos, transformation_fobos, 0.00036, self.mars)
+        self.fobos.draw(transformation_fobos)
 
-        transformation_deimos = identity_mat() #0.00036
-        #self.apply_moon_transformation(self.deimos, self.mars, transformation_deimos, 0.00036, 0.005, 0, 0.002)
-        # el tamaño de las lunas de marte es mucho menor, pero no se verian
+        transformation_deimos = identity_mat()
+        transformation_deimos = self.apply_moon_transformation(self.deimos, transformation_deimos, 0.00036, self.mars)
+        self.deimos.draw(transformation_deimos)
         # marte y lunas__________________________________________________________
 
         # jupiter y lunas__________________________________________________________
         transformation_jupiter = identity_mat()
         self.apply_transformation(self.jupiter, transformation_jupiter, 0.05)
 
-        transformation_io = identity_mat()# 0.0013
-        #self.apply_moon_transformation(self.io, self.jupiter, transformation_io, 0.0013, 0.06, 0,0)
+        transformation_io = identity_mat()
+        transformation_io = self.apply_moon_transformation(self.io, transformation_io, 0.0013, self.jupiter)
+        self.io.draw(transformation_io)
 
-        transformation_europa = identity_mat() #0.0011
-        #self.apply_moon_transformation(self.europa, self.jupiter, transformation_europa, 0.0011, 0.07, 0, 0)
+        transformation_europa = identity_mat()
+        transformation_europa = self.apply_moon_transformation(self.europa, transformation_europa, 0.0011, self.jupiter)
+        self.europa.draw(transformation_europa)
 
-        transformation_calisto = identity_mat() #0.0017
-        #self.apply_moon_transformation(self.calisto, self.jupiter, transformation_calisto, 0.0017, 0.08, 0, 0)
+        transformation_calisto = identity_mat()
+        transformation_calisto = self.apply_moon_transformation(self.calisto, transformation_calisto, 0.0017, self.jupiter)
+        self.calisto.draw(transformation_calisto)
 
-        transformation_j_moon_1 = identity_mat() # 0.0018
-        #self.apply_moon_transformation(self.j_moon_1, self.jupiter, transformation_j_moon_1, 0.0018,0.09, 0, 0)
+        transformation_j_moon_1 = identity_mat()
+        transformation_j_moon_1 = self.apply_moon_transformation(self.j_moon_1, transformation_j_moon_1, 0.0018, self.jupiter)
+        self.j_moon_1.draw(transformation_j_moon_1)
 
-        transformation_j_moon_2 = identity_mat() #0.0013
-        #self.apply_moon_transformation(self.j_moon_2, self.jupiter, transformation_j_moon_2, 0.0013, 0.1, 0, 0)
+        transformation_j_moon_2 = identity_mat()
+        transformation_j_moon_2 = self.apply_moon_transformation(self.j_moon_2, transformation_j_moon_2, 0.0013, self.jupiter)
+        self.j_moon_2.draw(transformation_j_moon_2)
 
-        transformation_j_moon_3 = identity_mat() #0.0013
-        #self.apply_moon_transformation(self.j_moon_3, self.jupiter, transformation_j_moon_3, 0.0013, 0.2, 0, 0)
+        transformation_j_moon_3 = identity_mat()
+        transformation_j_moon_3 = self.apply_moon_transformation(self.j_moon_3, transformation_j_moon_3, 0.0013, self.jupiter)
+        self.j_moon_3.draw(transformation_j_moon_3)
         # jupiter y lunas__________________________________________________________
 
         # saturno y lunas__________________________________________________________
         transformation_saturn = identity_mat()
         self.apply_transformation(self.saturn, transformation_saturn, 0.043)
 
-        transformation_mimas = identity_mat() #0.00046
-        #self.apply_moon_transformation(self.mimas, self.saturn, transformation_mimas, 0.00046, 0.05, 0, 0)
+        transformation_mimas = identity_mat()
+        transformation_mimas = self.apply_moon_transformation(self.mimas, transformation_mimas, 0.00046, self.saturn)
+        self.mimas.draw(transformation_mimas)
 
-        transformation_encelado = identity_mat() #0.00046
-        #self.apply_moon_transformation(self.encelado, self.saturn, transformation_encelado, 0.00046, 0.06, 0, 0)
+        transformation_encelado = identity_mat()
+        transformation_encelado = self.apply_moon_transformation(self.encelado, transformation_encelado, 0.00046,
+                                                                 self.saturn)
+        self.encelado.draw(transformation_encelado)
 
-        transformation_tetis = identity_mat() # 0.00036
-        #self.apply_moon_transformation(self.tetis, self.saturn, transformation_tetis, 0.00046, 0.07, 0, 0)
+        transformation_tetis = identity_mat()
+        transformation_tetis = self.apply_moon_transformation(self.tetis, transformation_tetis, 0.00036, self.saturn)
+        self.tetis.draw(transformation_tetis)
 
-        transformation_titan = identity_mat() #0.0018
-        #self.apply_moon_transformation(self.titan, self.saturn, transformation_titan, 0.0018, 0.08, 0, 0)
+        transformation_titan = identity_mat()
+        transformation_titan = self.apply_moon_transformation(self.titan, transformation_titan, 0.0018, self.saturn)
+        self.titan.draw(transformation_titan)
 
-        transformation_s_moon_1 = identity_mat() # 0.0015
-        #self.apply_moon_transformation(self.s_moon_1, self.saturn, transformation_s_moon_1, 0.0015, 0.09, 0, 0)
+        transformation_s_moon_1 = identity_mat()
+        transformation_s_moon_1 = self.apply_moon_transformation(self.s_moon_1, transformation_s_moon_1, 0.0015,
+                                                                 self.saturn)
+        self.s_moon_1.draw(transformation_s_moon_1)
 
-        transformation_s_moon_2 = identity_mat() #0.0015
-        #self.apply_moon_transformation(self.s_moon_2, self.saturn, transformation_s_moon_2, 0.0015, 0.1, 0, 0)
-        #Gran parte de las lunas tienen un tamaño menor, pero como en marte, no se verian
+        transformation_s_moon_2 = identity_mat()
+        transformation_s_moon_2 = self.apply_moon_transformation(self.s_moon_2, transformation_s_moon_2, 0.0015,
+                                                                 self.saturn)
+        self.s_moon_2.draw(transformation_s_moon_2)
         # saturno y lunas__________________________________________________________
 
         # urano y lunas__________________________________________________________
         transformation_uranus = identity_mat()
         self.apply_transformation(self.uranus, transformation_uranus, 0.017)
 
-        transformation_u_moon_1 = identity_mat() #0.0046
-        #self.apply_moon_transformation(self.u_moon_1, self.uranus, transformation_u_moon_1, 0.00046, 0.02, 0, 0)
+        transformation_u_moon_1 = identity_mat()
+        transformation_u_moon_1 = self.apply_moon_transformation(self.u_moon_1, transformation_u_moon_1, 0.0046,
+                                                                 self.uranus)
+        self.u_moon_1.draw(transformation_u_moon_1)
 
-        transformation_u_moon_2 = identity_mat() #0.002
-        #self.apply_moon_transformation(self.u_moon_2, self.uranus, transformation_u_moon_2, 0.0002, 0.03, 0, 0)
+        transformation_u_moon_2 = identity_mat()
+        transformation_u_moon_2 = self.apply_moon_transformation(self.u_moon_2, transformation_u_moon_2, 0.002,
+                                                                 self.uranus)
+        self.u_moon_2.draw(transformation_u_moon_2)
 
-        transformation_u_moon_3 = identity_mat() # 0.00046
-        #self.apply_moon_transformation(self.u_moon_3, self.uranus, transformation_u_moon_3, 0.00046, 0.04, 0, 0)
+        transformation_u_moon_3 = identity_mat()
+        transformation_u_moon_3 = self.apply_moon_transformation(self.u_moon_3, transformation_u_moon_3, 0.0046,
+                                                                 self.uranus)
+        self.u_moon_3.draw(transformation_u_moon_3)
 
-        transformation_u_moon_4 = identity_mat() #0.00046
-        #self.apply_moon_transformation(self.u_moon_4, self.uranus, transformation_u_moon_4, 0.00046, 0.05, 0, 0)
+        transformation_u_moon_4 = identity_mat()
+        transformation_u_moon_4 = self.apply_moon_transformation(self.u_moon_4, transformation_u_moon_4, 0.0046,
+                                                                 self.uranus)
+        self.u_moon_4.draw(transformation_u_moon_4)
 
-        transformation_u_moon_5 = identity_mat() # 0.002
-        #self.apply_moon_transformation(self.u_moon_5, self.uranus, transformation_u_moon_5, 0.002, 0.06, 0, 0)
+        transformation_u_moon_5 = identity_mat()
+        transformation_u_moon_5 = self.apply_moon_transformation(self.u_moon_5, transformation_u_moon_5, 0.002,
+                                                                 self.uranus)
+        self.u_moon_5.draw(transformation_u_moon_5)
 
-        transformation_u_moon_6 = identity_mat() #0.002
-        #self.apply_moon_transformation(self.u_moon_6, self.uranus, transformation_u_moon_6, 0.002, 0.07, 0, 0)
+        transformation_u_moon_6 = identity_mat()
+        transformation_u_moon_6 = self.apply_moon_transformation(self.u_moon_6, transformation_u_moon_6, 0.002,
+                                                                 self.uranus)
+        self.u_moon_6.draw(transformation_u_moon_6)
         # urano y lunas__________________________________________________________
 
         # neptuno y lunas__________________________________________________________
         transformation_neptune = identity_mat()
         self.apply_transformation(self.neptune, transformation_neptune, 0.017)
 
-        transformation_n_moon_1 = identity_mat() #0.001
-        #self.apply_moon_transformation(self.n_moon_1, self.neptune, transformation_n_moon_1, 0.001, 0.02, 0, 0)
+        transformation_n_moon_1 = identity_mat()
+        transformation_n_moon_1 = self.apply_moon_transformation(self.n_moon_1, transformation_n_moon_1, 0.001,
+                                                                 self.neptune)
+        self.n_moon_1.draw(transformation_n_moon_1)
 
-        transformation_n_moon_2 = identity_mat() #0.001
-        #self.apply_moon_transformation(self.n_moon_2, self.neptune, transformation_n_moon_2, 0.001, 0.03, 0, 0)
+        transformation_n_moon_2 = identity_mat()
+        transformation_n_moon_2 = self.apply_moon_transformation(self.n_moon_2, transformation_n_moon_2, 0.001,
+                                                                 self.neptune)
+        self.n_moon_2.draw(transformation_n_moon_2)
 
         transformation_n_moon_3 = identity_mat()
-        #self.apply_moon_transformation(self.n_moon_3, self.neptune, transformation_n_moon_3, 0.001, 0.04, 0, 0)
+        transformation_n_moon_3 = self.apply_moon_transformation(self.n_moon_3, transformation_n_moon_3, 0.001,
+                                                                 self.neptune)
+        self.n_moon_3.draw(transformation_n_moon_3)
 
         transformation_n_moon_4 = identity_mat()
-        #self.apply_moon_transformation(self.n_moon_4, self.neptune, transformation_n_moon_4, 0.001, 0.05, 0, 0)
+        transformation_n_moon_4 = self.apply_moon_transformation(self.n_moon_4, transformation_n_moon_4, 0.001,
+                                                                 self.neptune)
+        self.n_moon_4.draw(transformation_n_moon_4)
 
         transformation_n_moon_5 = identity_mat()
-        #self.apply_moon_transformation(self.n_moon_5, self.neptune, transformation_n_moon_5, 0.001, 0.06, 0, 0)
+        transformation_n_moon_5 = self.apply_moon_transformation(self.n_moon_5, transformation_n_moon_5, 0.001,
+                                                                 self.neptune)
+        self.n_moon_5.draw(transformation_n_moon_5)
 
         transformation_n_moon_6 = identity_mat()
-        #self.apply_moon_transformation(self.n_moon_6, self.neptune, transformation_n_moon_6, 0.001, 0.07, 0, 0)
+        transformation_n_moon_6 = self.apply_moon_transformation(self.n_moon_6, transformation_n_moon_6, 0.001,
+                                                                 self.neptune)
+        self.n_moon_6.draw(transformation_n_moon_6)
         # neptuno y lunas__________________________________________________________
 
         # pluto y lunas__________________________________________________________
