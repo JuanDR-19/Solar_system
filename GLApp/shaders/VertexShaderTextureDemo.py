@@ -192,7 +192,7 @@ class VertexShaderCameraDemo(BaseScene):
             0.1,
             0,
             0.01,
-            2
+            2.13
         )
         self.mercury = Planet(
             self.program_id,
@@ -566,7 +566,8 @@ class VertexShaderCameraDemo(BaseScene):
         self.apply_transformation(self.earth, transformation, 0.0046)
 
         e_moon_transformation = identity_mat()
-        self.apply_moon_transformation(self.e_moon, self.earth, e_moon_transformation, 0.0012, 0, 0, 0)
+        self.apply_transformation(self.e_moon, e_moon_transformation, 0.0012)
+        # self.apply_moon_transformation(self.e_moon, self.earth, e_moon_transformation, 0.0012, 0, 0, 0)
         # Tierra y lunas__________________________________________________________
 
         # sol__________________________________________________________
