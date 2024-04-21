@@ -176,17 +176,17 @@ class VertexShaderCameraDemo(BaseScene):
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/mapamundi301210.jpg",
             0,
-            0.3,
+            0.421,
             0,
-            0.01,
-            2
+            0.122,
+            1.5791
         )
         self.e_moon = Planet(
             self.program_id,
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/e_moon.jpg",
             0,
-            0.1,
+            0.5,
             0,
             0.5,
             0.13
@@ -197,30 +197,30 @@ class VertexShaderCameraDemo(BaseScene):
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/mercury.jpg",
             0,
-            0.1,
+            0.036,
             0,
-            0.02,
-            1
+            0.5,
+            0.917
         )
         self.venus = Planet(
             self.program_id,
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/venus.jpg",
             0,
-            0.1,
+            0.084,
             0,
-            0.03,
-            1.5
+            0.201,
+            1.276
         )
         self.mars = Planet(
             self.program_id,
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/mars.jpg",
             0,
-            0.1,
+            0.407,
             0,
-            0.04,
-            2.5
+            0.065,
+            2.1402
         )
         self.fobos = Planet(
             self.program_id,
@@ -229,7 +229,7 @@ class VertexShaderCameraDemo(BaseScene):
             0,
             0.1,
             0,
-            0.5,
+            0.9,
             0.00337
         )
         self.deimos = Planet(
@@ -247,10 +247,10 @@ class VertexShaderCameraDemo(BaseScene):
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/jupiter.jpg",
             0,
-            0.1,
+            0.5,
             0,
-            0.05,
-            3
+            0.020,
+            5.6
         )
         self.io = Planet(
             self.program_id,
@@ -317,10 +317,10 @@ class VertexShaderCameraDemo(BaseScene):
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/saturn.jpg",
             0,
-            0.1,
+            0.4,
             0,
-            0.06,
-            3.5
+            0.008,
+            10.2
         )
         self.mimas = Planet(
             self.program_id,
@@ -387,10 +387,10 @@ class VertexShaderCameraDemo(BaseScene):
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/uranus.jpg",
             0,
-            0.1,
+            0.114,
             0,
-            0.07,
-            4
+            0.003,
+            20.4
         )
         self.u_moon_1 = Planet(
             self.program_id,
@@ -400,7 +400,7 @@ class VertexShaderCameraDemo(BaseScene):
             0.1,
             0,
             0.5,
-            0.0179
+            0.179
         )
         self.u_moon_2 = Planet(
             self.program_id,
@@ -410,7 +410,7 @@ class VertexShaderCameraDemo(BaseScene):
             0.1,
             0,
             0.8,
-            0.01935
+            0.1935
         )
         self.u_moon_3 = Planet(
             self.program_id,
@@ -420,7 +420,7 @@ class VertexShaderCameraDemo(BaseScene):
             0.1,
             0,
             0.2,
-            0.02128
+            0.2128
         )
         self.u_moon_4 = Planet(
             self.program_id,
@@ -430,7 +430,7 @@ class VertexShaderCameraDemo(BaseScene):
             0.1,
             0,
             0.6,
-            0.02222
+            0.2222
         )
         self.u_moon_5 = Planet(
             self.program_id,
@@ -440,7 +440,7 @@ class VertexShaderCameraDemo(BaseScene):
             0.1,
             0,
             0.7,
-            0.022545
+            0.22545
         )
         self.u_moon_6 = Planet(
             self.program_id,
@@ -450,17 +450,17 @@ class VertexShaderCameraDemo(BaseScene):
             0.1,
             0,
             0.9,
-            0.02690
+            0.2690
         )
         self.neptune = Planet(
             self.program_id,
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/neptune.jpg",
             0,
-            0.1,
+            0.169,
             0,
-            0.08,
-            4.5
+            0.002,
+            25.5
         )
         self.n_moon_1 = Planet(
             self.program_id,
@@ -527,10 +527,12 @@ class VertexShaderCameraDemo(BaseScene):
             "../../assets/models/smooth-sphere.obj",
             "../../assets/textures/pluto.jpg",
             0,
-            0.1,
+            0.5,
             0,
             0.09,
-            5
+            26.5
+            # lass distancias reales de neptuno y pluto son de aprox 40.5 en la escala manejada
+            #para poder visualizarlos en el modelo se redujo aun mas
         )
         self.sun = Planet(
             self.program_id,
